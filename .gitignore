@@ -1,0 +1,10 @@
+**/builds/
+**/dist/
+**/build/
+**/client/
+**/server/
+*.spec
+*.pyc
+*.so
+*.dll
+*.exe

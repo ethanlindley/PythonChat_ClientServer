@@ -1,6 +1,8 @@
 import socket, select, string, sys
 
-alias = raw_input('Please enter your desired username: ')
+if(len(sys.argv) < 3) :
+    print 'Usage: client hostname port (example -> client 127.0.0.1 5000)'
+    sys.exit()
 
 def prompt():
     sys.stdout.write(alias + ': ')
@@ -8,10 +10,6 @@ def prompt():
 
 # Main function
 if __name__ == "__main__":
-
-    if(len(sys.argv) < 3) :
-        print 'Usage: python client.py hostname port'
-        sys.exit()
 
     host = sys.argv[1]
     port = int(sys.argv[2])
@@ -26,6 +24,7 @@ if __name__ == "__main__":
         print 'Unable to connect.'
         sys.exit()
     print 'Successfully connected.'
+    alias = raw_input('Please enter your desired username: ')
     prompt()
 
     while 1:
